@@ -1,17 +1,17 @@
 <script lang="ts">
-  type User = {
-    name: string;
-    role: string;
-    bio: string;
-    location: string;
-  };
+type User = {
+  name: string;
+  role: string;
+  bio: string;
+  location: string;
+};
 
-  let user = $state<User>({
-    name: 'Sam Rivera',
-    role: 'Frontend Developer',
-    bio: 'Teaching programming through small, useful web apps.',
-    location: 'Remote'
-  });
+let user = $state<User>({
+  name: 'Sam Rivera',
+  role: 'Frontend Developer',
+  bio: 'Teaching programming through small, useful web apps.',
+  location: 'Remote',
+});
 </script>
 
 <div class="card profile">

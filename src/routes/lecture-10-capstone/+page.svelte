@@ -1,55 +1,55 @@
 <script lang="ts">
-  type Card = {
-    question: string;
-    answer: string;
-  };
+type Card = {
+  question: string;
+  answer: string;
+};
 
-  let cards = $state<Card[]>([
-    { question: 'What does HTML stand for?', answer: 'HyperText Markup Language' },
-    { question: 'Which CSS property changes text color?', answer: 'color' },
-    { question: 'What keyword declares a variable in Svelte?', answer: 'let' },
-    { question: 'What symbol starts a Svelte template expression?', answer: '{' },
-    { question: 'Which function turns a string into a number?', answer: 'Number' }
-  ]);
+let cards = $state<Card[]>([
+  { question: 'What does HTML stand for?', answer: 'HyperText Markup Language' },
+  { question: 'Which CSS property changes text color?', answer: 'color' },
+  { question: 'What keyword declares a variable in Svelte?', answer: 'let' },
+  { question: 'What symbol starts a Svelte template expression?', answer: '{' },
+  { question: 'Which function turns a string into a number?', answer: 'Number' },
+]);
 
-  let currentIndex = $state(0);
-  let userAnswer = $state('');
-  let score = $state(0);
-  let answered = $state(false);
-  let isCorrect = $state(false);
-  let finished = $state(false);
+let currentIndex = $state(0);
+let userAnswer = $state('');
+let score = $state(0);
+let answered = $state(false);
+let isCorrect = $state(false);
+let finished = $state(false);
 
-  function normalize(value: string): string {
-    return value.trim().toLowerCase();
-  }
+function normalize(value: string): string {
+  return value.trim().toLowerCase();
+}
 
-  function check() {
-    if (userAnswer.trim() === '') return;
-    answered = true;
-    isCorrect = normalize(userAnswer) === normalize(cards[currentIndex].answer);
-    if (isCorrect) score = score + 1;
-  }
+function check() {
+  if (userAnswer.trim() === '') return;
+  answered = true;
+  isCorrect = normalize(userAnswer) === normalize(cards[currentIndex].answer);
+  if (isCorrect) score = score + 1;
+}
 
-  function next() {
-    if (currentIndex < cards.length - 1) {
-      currentIndex = currentIndex + 1;
-      userAnswer = '';
-      answered = false;
-      isCorrect = false;
-    } else {
-      finished = true;
-    }
-  }
-
-  function restart() {
-    currentIndex = 0;
+function next() {
+  if (currentIndex < cards.length - 1) {
+    currentIndex = currentIndex + 1;
     userAnswer = '';
-    score = 0;
     answered = false;
     isCorrect = false;
-    finished = false;
-    cards = cards.sort(() => Math.random() - 0.5);
+  } else {
+    finished = true;
   }
+}
+
+function restart() {
+  currentIndex = 0;
+  userAnswer = '';
+  score = 0;
+  answered = false;
+  isCorrect = false;
+  finished = false;
+  cards = cards.sort(() => Math.random() - 0.5);
+}
 </script>
 
 <div class="card stack quiz">

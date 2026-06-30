@@ -1,17 +1,17 @@
 <script lang="ts">
-  let count = $state(0);
+let count = $state(0);
 
-  function increment() {
-    count = count + 1;
-  }
+function increment() {
+  count = count + 1;
+}
 
-  function decrement() {
-    count = count - 1;
-  }
+function decrement() {
+  count = count - 1;
+}
 
-  function reset() {
-    count = 0;
-  }
+function reset() {
+  count = 0;
+}
 </script>
 
 <div class="card stack">

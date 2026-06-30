@@ -1,25 +1,25 @@
 <script lang="ts">
-  let newName = $state('');
-  let names = $state<string[]>(['Alice', 'Bob', 'Carol']);
-  let winner = $state('');
+let newName = $state('');
+let names = $state<string[]>(['Alice', 'Bob', 'Carol']);
+let winner = $state('');
 
-  function add() {
-    if (newName.trim() !== '') {
-      names = [...names, newName.trim()];
-      newName = '';
-    }
+function add() {
+  if (newName.trim() !== '') {
+    names = [...names, newName.trim()];
+    newName = '';
   }
+}
 
-  function pick() {
-    if (names.length > 0) {
-      winner = names[Math.floor(Math.random() * names.length)];
-    }
+function pick() {
+  if (names.length > 0) {
+    winner = names[Math.floor(Math.random() * names.length)];
   }
+}
 
-  function clear() {
-    names = [];
-    winner = '';
-  }
+function clear() {
+  names = [];
+  winner = '';
+}
 </script>
 
 <div class="card stack">

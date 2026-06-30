@@ -1,20 +1,20 @@
 <script lang="ts">
-  type Product = {
-    id: number;
-    name: string;
-    price: number;
-    inStock: boolean;
-  };
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+  inStock: boolean;
+};
 
-  let products = $state<Product[]>([
-    { id: 1, name: 'Notebook', price: 12, inStock: true },
-    { id: 2, name: 'Pen set', price: 8, inStock: true },
-    { id: 3, name: 'Desk lamp', price: 35, inStock: false }
-  ]);
+let products = $state<Product[]>([
+  { id: 1, name: 'Notebook', price: 12, inStock: true },
+  { id: 2, name: 'Pen set', price: 8, inStock: true },
+  { id: 3, name: 'Desk lamp', price: 35, inStock: false },
+]);
 
-  function toggleStock(id: number) {
-    products = products.map((p) => (p.id === id ? { ...p, inStock: !p.inStock } : p));
-  }
+function toggleStock(id: number) {
+  products = products.map((p) => (p.id === id ? { ...p, inStock: !p.inStock } : p));
+}
 </script>
 
 <div class="card stack">

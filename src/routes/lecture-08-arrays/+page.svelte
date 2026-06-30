@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-grocery-list', title: 'Grocery List' },
-    { slug: 'project-02-random-picker', title: 'Random Picker' }
-  ];
+const projects = [
+  { slug: 'project-01-grocery-list', title: 'Grocery List' },
+  { slug: 'project-02-random-picker', title: 'Random Picker' },
+];
 </script>
 
 <h1>Lecture 08 — Arrays</h1>

@@ -1,29 +1,29 @@
 <script lang="ts">
-  type Item = {
-    name: string;
-    bought: boolean;
-  };
+type Item = {
+  name: string;
+  bought: boolean;
+};
 
-  let newItem = $state('');
-  let items = $state<Item[]>([
-    { name: 'Milk', bought: false },
-    { name: 'Bread', bought: false }
-  ]);
+let newItem = $state('');
+let items = $state<Item[]>([
+  { name: 'Milk', bought: false },
+  { name: 'Bread', bought: false },
+]);
 
-  function add() {
-    if (newItem.trim() !== '') {
-      items = [...items, { name: newItem.trim(), bought: false }];
-      newItem = '';
-    }
+function add() {
+  if (newItem.trim() !== '') {
+    items = [...items, { name: newItem.trim(), bought: false }];
+    newItem = '';
   }
+}
 
-  function toggle(index: number) {
-    items = items.map((item, i) => (i === index ? { ...item, bought: !item.bought } : item));
-  }
+function toggle(index: number) {
+  items = items.map((item, i) => (i === index ? { ...item, bought: !item.bought } : item));
+}
 
-  function remove(index: number) {
-    items = items.filter((_, i) => i !== index);
-  }
+function remove(index: number) {
+  items = items.filter((_, i) => i !== index);
+}
 </script>
 
 <div class="card stack">

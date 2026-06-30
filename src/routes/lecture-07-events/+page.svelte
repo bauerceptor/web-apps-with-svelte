@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-counter', title: 'Counter' },
-    { slug: 'project-02-keyboard-form', title: 'Keyboard Form' }
-  ];
+const projects = [
+  { slug: 'project-01-counter', title: 'Counter' },
+  { slug: 'project-02-keyboard-form', title: 'Keyboard Form' },
+];
 </script>
 
 <h1>Lecture 07 — Events</h1>

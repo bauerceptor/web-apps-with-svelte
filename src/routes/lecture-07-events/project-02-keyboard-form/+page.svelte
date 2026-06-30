@@ -1,18 +1,18 @@
 <script lang="ts">
-  let message = $state('');
-  let lastSubmitted = $state('');
+let message = $state('');
+let lastSubmitted = $state('');
 
-  function submit(e: Event) {
-    e.preventDefault();
-    lastSubmitted = message;
+function submit(e: Event) {
+  e.preventDefault();
+  lastSubmitted = message;
+  message = '';
+}
+
+function handleKeydown(e: KeyboardEvent) {
+  if (e.key === 'Escape') {
     message = '';
   }
-
-  function handleKeydown(e: KeyboardEvent) {
-    if (e.key === 'Escape') {
-      message = '';
-    }
-  }
+}
 </script>
 
 <!-- :has() styles the form when the input has focus. -->
