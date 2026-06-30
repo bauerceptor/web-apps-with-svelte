@@ -1,23 +1,9 @@
+import { env } from '$env/dynamic/private';
 import { error, json } from '@sveltejs/kit';
+import type { RecipeRequest, RecipeResponse } from '$lib/recipe';
 import type { RequestHandler } from './$types';
 
-declare const process: {
-  env: Record<string, string | undefined>;
-};
-
-export type RecipeRequest = {
-  ingredients: string;
-  style?: string;
-  meal?: string;
-};
-
-export type RecipeResponse = {
-  title: string;
-  ingredients: string[];
-  instructions: string[];
-  raw: string;
-  mock: boolean;
-};
+const PLACEHOLDER_KEY = 'gsk_your_groq_api_key_here';
 
 const MOCK_RECIPE: RecipeResponse = {
   title: 'Demo Vegetable Stir-Fry',
@@ -66,9 +52,9 @@ function parseRecipe(raw: string): RecipeResponse {
 }
 
 async function fetchRecipe(request: RecipeRequest): Promise<RecipeResponse> {
-  const apiKey = process.env.GROQ_API_KEY;
+  const apiKey = env.GROQ_API_KEY;
 
-  if (!apiKey || apiKey.startsWith('gsk_your')) {
+  if (!apiKey || apiKey === PLACEHOLDER_KEY) {
     await new Promise((resolve) => setTimeout(resolve, 600));
     return MOCK_RECIPE;
   }
@@ -90,7 +76,7 @@ async function fetchRecipe(request: RecipeRequest): Promise<RecipeResponse> {
         { role: 'user', content: buildPrompt(request) },
       ],
       temperature: 0.7,
-      max_tokens: 512,
+      max_tokens: 1024,
     }),
   });
 
@@ -113,7 +99,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const recipe = await fetchRecipe(body);
     return json(recipe);
   } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
-    throw error(500, message);
+    console.error('Recipe generation failed:', err);
+    throw error(500, 'Could not generate a recipe. Please try again later.');
   }
 };

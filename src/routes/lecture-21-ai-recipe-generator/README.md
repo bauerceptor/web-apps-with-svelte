@@ -1,4 +1,4 @@
-# Lecture 21 — Smart Recipe Generator
+# Lecture 21 — Module 4 Capstone: Smart Recipe Generator
 
 **Goal:** Build an AI-driven app that generates recipes from a list of ingredients.
 

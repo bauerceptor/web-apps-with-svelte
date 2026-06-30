@@ -16,7 +16,7 @@ const features = [
     in a clean card.
   </p>
 
-  <h2>What you will practice</h2>
+  <h2>Features</h2>
   <ul class="concept-list">
     {#each features as feature}
       <li>{feature}</li>

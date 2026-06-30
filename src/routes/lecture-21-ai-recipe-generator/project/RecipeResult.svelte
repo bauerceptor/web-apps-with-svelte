@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { RecipeResponse } from '../../api/recipe/+server';
+import type { RecipeResponse } from '$lib/recipe';
 
 let { recipe } = $props<{ recipe: RecipeResponse }>();
 </script>

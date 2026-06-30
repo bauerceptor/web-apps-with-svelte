@@ -5,7 +5,7 @@ let { status, message = '' } = $props<{
 }>();
 </script>
 
-<div class="status" class:loading={status === 'loading'} class:error={status === 'error'} class:success={status === 'success'}>
+<div class="status" class:loading={status === 'loading'} class:error={status === 'error'} class:success={status === 'success'} role="status" aria-live="polite">
   {#if status === 'idle'}
     <span>Enter ingredients below to generate a recipe.</span>
   {:else if status === 'loading'}

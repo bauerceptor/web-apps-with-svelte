@@ -1,8 +1,8 @@
 <script lang="ts">
+import type { RecipeResponse } from '$lib/recipe';
 import RecipeForm from './RecipeForm.svelte';
 import RecipeResult from './RecipeResult.svelte';
 import StatusBadge from './StatusBadge.svelte';
-import type { RecipeResponse } from '../../api/recipe/+server';
 
 let status = $state<'idle' | 'loading' | 'success' | 'error'>('idle');
 let recipe = $state<RecipeResponse | null>(null);
@@ -34,7 +34,11 @@ async function handleSubmit(data: { ingredients: string; style: string; meal: st
 }
 </script>
 
-<div class="stack">
+<svelte:head>
+  <title>Smart Recipe Generator</title>
+</svelte:head>
+
+<div class="card stack">
   <RecipeForm onSubmit={handleSubmit} disabled={status === 'loading'} />
   <StatusBadge {status} message={errorMessage} />
 
