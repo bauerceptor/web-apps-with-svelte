@@ -4,23 +4,23 @@ export type Theme = 'light' | 'dark' | 'system';
 
 const STORAGE_KEY = 'lecture-18-theme';
 
-function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') return 'system';
-
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === 'light' || stored === 'dark' || stored === 'system') {
-      return stored;
-    }
-  } catch {
-    // Ignore storage errors during initialization.
-  }
-
-  return 'system';
-}
+export type ThemeStore = ReturnType<typeof createThemeStore>;
 
 function createThemeStore() {
-  const store = writable<Theme>(getInitialTheme());
+  const store = writable<Theme>('system');
+
+  function init() {
+    if (typeof window === 'undefined') return;
+
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'light' || stored === 'dark' || stored === 'system') {
+        store.set(stored);
+      }
+    } catch {
+      // Ignore storage errors during initialization.
+    }
+  }
 
   if (typeof window !== 'undefined') {
     store.subscribe((value) => {
@@ -32,7 +32,10 @@ function createThemeStore() {
     });
   }
 
-  return store;
+  return {
+    ...store,
+    init,
+  };
 }
 
 export const theme = createThemeStore();

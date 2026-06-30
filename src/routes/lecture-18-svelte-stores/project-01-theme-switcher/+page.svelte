@@ -1,5 +1,5 @@
 <script lang="ts">
-import { theme, type Theme } from './theme';
+import { type Theme, theme } from './theme';
 
 const options: Theme[] = ['light', 'dark', 'system'];
 
@@ -16,6 +16,12 @@ function applyTheme(value: Theme) {
   document.documentElement.classList.remove('light', 'dark');
   document.documentElement.classList.add(resolved);
 }
+
+$effect(() => {
+  if (typeof window !== 'undefined') {
+    theme.init();
+  }
+});
 
 $effect(() => {
   applyTheme($theme);

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { notifications, count } from './notifications';
+import { count, notifications } from './notifications';
 import type { NotificationType } from './notifications';
 
 const types: NotificationType[] = ['info', 'success', 'warning', 'error'];
