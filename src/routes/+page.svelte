@@ -20,6 +20,7 @@ const lectures = [
   { num: 18, slug: 'lecture-18-svelte-stores', title: 'Stores' },
   { num: 19, slug: 'lecture-19-svelte-transitions', title: 'Transitions & Actions' },
   { num: 20, slug: 'lecture-20-module-3-capstone', title: 'Capstone: Markdown Notes' },
+  { num: 21, slug: 'lecture-21-ai-recipe-generator', title: 'Capstone: Smart Recipe Generator' },
 ];
 </script>
 
