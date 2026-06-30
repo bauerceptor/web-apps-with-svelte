@@ -2,32 +2,45 @@
 const STORAGE_KEY = 'lecture-17-notepad';
 const SAVE_DELAY_MS = 800;
 
-let content = $state('');
 let status = $state('Start typing to save.');
 let lastSaved = $state<string | null>(null);
 
-$effect(() => {
-  if (typeof window === 'undefined') return;
-
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved !== null) {
-    content = saved;
-    status = 'Restored from storage.';
-    lastSaved = new Date().toLocaleTimeString();
+function restoreContent(): string {
+  if (typeof window === 'undefined') return '';
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved !== null) {
+      status = 'Restored from storage.';
+      return saved;
+    }
+  } catch {
+    // ignore storage errors during restore
   }
-});
+  return '';
+}
+
+let content = $state(restoreContent());
+let hasTyped = $state(false);
+
+function handleInput() {
+  hasTyped = true;
+}
 
 $effect(() => {
   const text = content;
 
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || !hasTyped) return;
 
   status = 'Waiting for you to stop typing...';
 
   const timeoutId = setTimeout(() => {
-    localStorage.setItem(STORAGE_KEY, text);
-    status = 'Saved to localStorage.';
-    lastSaved = new Date().toLocaleTimeString();
+    try {
+      localStorage.setItem(STORAGE_KEY, text);
+      status = 'Saved to localStorage.';
+      lastSaved = new Date().toLocaleTimeString();
+    } catch {
+      status = 'Save failed.';
+    }
   }, SAVE_DELAY_MS);
 
   return () => {
@@ -44,7 +57,15 @@ $effect(() => {
     stop typing for {SAVE_DELAY_MS}ms.
   </p>
 
-  <textarea class="editor" bind:value={content} rows="10" placeholder="Write something..."></textarea>
+  <label for="notepad-editor">Your note</label>
+  <textarea
+    id="notepad-editor"
+    class="editor"
+    bind:value={content}
+    oninput={handleInput}
+    rows="10"
+    placeholder="Write something..."
+  ></textarea>
 
   <div class="meta">
     <p class="status">{status}</p>

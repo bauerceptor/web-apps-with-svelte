@@ -1,10 +1,12 @@
 <script lang="ts">
-let online = $state(typeof navigator !== 'undefined' ? navigator.onLine : true);
+let online = $state(true);
 let width = $state(0);
 let height = $state(0);
 
 $effect(() => {
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
+
+  online = navigator.onLine;
 
   const updateSize = () => {
     width = window.innerWidth;
