@@ -205,6 +205,8 @@ git commit -m "feat: add lecture 15 - bindings"
 - Create: `src/routes/lecture-16-module-2-capstone/README.md`
 - Create: `src/routes/lecture-16-module-2-capstone/+page.svelte`
 
+The capstone is a single project at the lecture root, following the same pattern as the Module 1 capstone.
+
 **Requirements:**
 - Build a "Task Dashboard" that uses:
   - `$state` and `$derived` for task stats.
