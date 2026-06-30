@@ -1,6 +1,10 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
+declare const process: {
+  env: Record<string, string | undefined>;
+};
+
 export type RecipeRequest = {
   ingredients: string;
   style?: string;
