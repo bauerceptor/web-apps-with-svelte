@@ -20,6 +20,7 @@ Teach the core Svelte 5 concepts that appear in the official Svelte tutorial, pl
 | **13 — Logic Blocks** | `{#if}`, `{#each}` keyed, `{#await}` | Conditional rendering, keyed loops for stateful items, async data | Async quote fetcher, Keyed todo list with reorder |
 | **14 — Events** | DOM events, modifiers, component events | `onclick`, `oninput`, `|preventDefault`, `|stopPropagation`, forwarding custom events | Event modifier playground, Custom stepper component |
 | **15 — Bindings** | `bind:value`, `bind:checked`, `bind:this`, `bind:group` | Two-way binding for inputs, element refs, grouped inputs | Settings form, Survey poll |
+| **16 — Module 2 Capstone** | All Module 2 concepts combined | Build a dashboard that uses runes, props, logic blocks, events, and bindings together | Interactive task dashboard |
 
 ---
 
@@ -48,6 +49,8 @@ Teach the core Svelte 5 concepts that appear in the official Svelte tutorial, pl
 - `src/routes/lecture-15-svelte-bindings/+page.svelte`
 - `src/routes/lecture-15-svelte-bindings/project-01-settings-form/+page.svelte`
 - `src/routes/lecture-15-svelte-bindings/project-02-survey-poll/+page.svelte`
+- `src/routes/lecture-16-module-2-capstone/README.md`
+- `src/routes/lecture-16-module-2-capstone/+page.svelte`
 
 ### CSS integration
 
@@ -60,6 +63,7 @@ Each lecture introduces one modern CSS feature:
 | 13 | Scoped CSS custom properties for components |
 | 14 | `@keyframes` animations |
 | 15 | `@layer` cascade layers |
+| 16 | Capstone: combine all Module 2 CSS techniques |
 
 ---
 
