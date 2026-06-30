@@ -15,26 +15,20 @@
 
 ## Module 2: Svelte 5 fundamentals
 
-- Reactivity with runes: `$state`, `$derived`, `$effect`
-- Props: `$props`, default values
-- Logic blocks: `{#if}`, `{#each}`, keyed `{#each}`, `{#await}`
-- Events: DOM events, modifiers, component events
-- Bindings: `bind:value`, `bind:checked`, `bind:this`
+11. Reactivity with runes: `$state`, `$derived`, `$effect`
+12. Props: `$props`, default values
+13. Logic blocks: `{#if}`, `{#each}`, keyed `{#each}`, `{#await}`
+14. Events: DOM events, modifiers, component events
+15. Bindings: `bind:value`, `bind:checked`, `bind:this`
+16. Capstone: Task Dashboard
 
-## Module 3: Svelte beyond components
+## Module 3: Beyond components
 
-- Lifecycle: `$effect`, cleanup functions
-- Stores: writable, readable, derived
-- Special elements: `<svelte:head>`, `<svelte:window>`, `<svelte:element>`
-- Transitions and animations
-- Actions: `use:action`
-- Classes and styles
-- Component composition: slots, snippets, render tags
-- Modules and context
+17. Lifecycle: `$effect`, cleanup functions
+18. Stores: writable, readable, derived
+19. Transitions, animations & actions
+20. Composition, context & special elements
 
 ## Module 4: AI-driven apps
 
-- Calling the Groq API
-- `async/await` and `fetch`
-- Loading, error, and success states
-- Smart Recipe Generator capstone
+21. Smart Recipe Generator capstone
