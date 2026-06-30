@@ -59,7 +59,7 @@ function restart() {
     <div class="finished">
       <p class="score">You scored {score} out of {cards.length}</p>
 
-      <!-- Loop through all cards to show a review list. -->
+      <!-- Show every question and answer so students can review missed cards. -->
       <ul class="review">
         {#each cards as card}
           <li><strong>{card.question}</strong> — {card.answer}</li>
