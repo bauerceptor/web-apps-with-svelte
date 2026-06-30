@@ -1,5 +1,5 @@
 <script lang="ts">
-import { type Theme, theme } from './theme';
+import { theme, type Theme } from './theme';
 
 const options: Theme[] = ['light', 'dark', 'system'];
 
@@ -11,26 +11,13 @@ function resolveTheme(value: Theme): 'light' | 'dark' {
 
 function applyTheme(value: Theme) {
   if (typeof document === 'undefined') return;
-
   const resolved = resolveTheme(value);
   document.documentElement.classList.remove('light', 'dark');
   document.documentElement.classList.add(resolved);
 }
 
 $effect(() => {
-  if (typeof window !== 'undefined') {
-    theme.init();
-  }
-});
-
-$effect(() => {
   applyTheme($theme);
-
-  return () => {
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.remove('light', 'dark');
-    }
-  };
 });
 </script>
 

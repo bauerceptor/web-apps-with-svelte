@@ -16,18 +16,24 @@ function createId(): string {
 
 function createNotifications() {
   const { subscribe, update } = writable<Notification[]>([]);
+  const timeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
   function dismiss(id: string) {
+    const timeout = timeouts.get(id);
+    if (timeout) {
+      clearTimeout(timeout);
+      timeouts.delete(id);
+    }
     update((list) => list.filter((notification) => notification.id !== id));
   }
 
   function add(message: string, type: NotificationType = 'info') {
     const id = createId();
-
     update((list) => [...list, { id, message, type }]);
 
     if (typeof window !== 'undefined') {
-      setTimeout(() => dismiss(id), AUTO_DISMISS_MS);
+      const timeout = setTimeout(() => dismiss(id), AUTO_DISMISS_MS);
+      timeouts.set(id, timeout);
     }
   }
 
