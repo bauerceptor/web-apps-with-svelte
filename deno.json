@@ -11,12 +11,13 @@
     "typescript": "npm:typescript@^5.0.0",
     "vite": "npm:vite@^5.0.0"
   },
+  "nodeModulesDir": "auto",
   "tasks": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "format": "biome format --write .",
-    "lint": "biome lint ."
+    "dev": "deno run -A npm:vite dev",
+    "build": "deno run -A npm:vite build",
+    "preview": "deno run -A npm:vite preview",
+    "check": "deno run -A npm:@sveltejs/kit/sync && deno run -A npm:svelte-check --tsconfig ./tsconfig.json",
+    "format": "deno run -A npm:@biomejs/biome format --write .",
+    "lint": "deno run -A npm:@biomejs/biome lint ."
   }
 }
