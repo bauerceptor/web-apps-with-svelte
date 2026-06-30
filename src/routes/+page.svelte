@@ -1,16 +1,16 @@
 <script lang="ts">
-  const lectures = [
-    { num: 1, slug: 'lecture-01-io', title: 'Input / Output & Variables' },
-    { num: 2, slug: 'lecture-02-types-and-operators', title: 'Numbers, Strings & Operators' },
-    { num: 3, slug: 'lecture-03-comparisons-and-booleans', title: 'Comparisons & Booleans' },
-    { num: 4, slug: 'lecture-04-if-else', title: 'If / Else' },
-    { num: 5, slug: 'lecture-05-loops', title: 'Loops' },
-    { num: 6, slug: 'lecture-06-functions', title: 'Functions' },
-    { num: 7, slug: 'lecture-07-events', title: 'Events' },
-    { num: 8, slug: 'lecture-08-arrays', title: 'Arrays' },
-    { num: 9, slug: 'lecture-09-objects', title: 'Objects' },
-    { num: 10, slug: 'lecture-10-capstone', title: 'Capstone: Flashcard Quiz' }
-  ];
+const lectures = [
+  { num: 1, slug: 'lecture-01-io', title: 'Input / Output & Variables' },
+  { num: 2, slug: 'lecture-02-types-and-operators', title: 'Numbers, Strings & Operators' },
+  { num: 3, slug: 'lecture-03-comparisons-and-booleans', title: 'Comparisons & Booleans' },
+  { num: 4, slug: 'lecture-04-if-else', title: 'If / Else' },
+  { num: 5, slug: 'lecture-05-loops', title: 'Loops' },
+  { num: 6, slug: 'lecture-06-functions', title: 'Functions' },
+  { num: 7, slug: 'lecture-07-events', title: 'Events' },
+  { num: 8, slug: 'lecture-08-arrays', title: 'Arrays' },
+  { num: 9, slug: 'lecture-09-objects', title: 'Objects' },
+  { num: 10, slug: 'lecture-10-capstone', title: 'Capstone: Flashcard Quiz' },
+];
 </script>
 
 <h1>Web Apps with Svelte</h1>

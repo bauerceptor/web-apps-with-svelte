@@ -1,9 +1,9 @@
 <script lang="ts">
-  import '$lib/styles/reset.css';
-  import '$lib/styles/theme.css';
-  import '$lib/styles/utils.css';
+import '$lib/styles/reset.css';
+import '$lib/styles/theme.css';
+import '$lib/styles/utils.css';
 
-  let { children } = $props();
+let { children } = $props();
 </script>
 
 <nav class="nav">
