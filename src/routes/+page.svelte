@@ -10,6 +10,12 @@ const lectures = [
   { num: 8, slug: 'lecture-08-arrays', title: 'Arrays' },
   { num: 9, slug: 'lecture-09-objects', title: 'Objects' },
   { num: 10, slug: 'lecture-10-capstone', title: 'Capstone: Flashcard Quiz' },
+  { num: 11, slug: 'lecture-11-svelte-reactivity', title: 'Runes & Reactivity' },
+  { num: 12, slug: 'lecture-12-svelte-props', title: 'Props' },
+  { num: 13, slug: 'lecture-13-svelte-logic', title: 'Logic Blocks' },
+  { num: 14, slug: 'lecture-14-svelte-events', title: 'Events' },
+  { num: 15, slug: 'lecture-15-svelte-bindings', title: 'Bindings' },
+  { num: 16, slug: 'lecture-16-module-2-capstone', title: 'Capstone: Task Dashboard' },
 ];
 </script>
 
