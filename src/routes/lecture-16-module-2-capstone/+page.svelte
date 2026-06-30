@@ -34,7 +34,7 @@ let filteredTasks = $derived(
   }),
 );
 
-function addTask(event: Event) {
+function addTask(event: SubmitEvent) {
   event.preventDefault();
   if (newTitle.trim() === '') return;
 

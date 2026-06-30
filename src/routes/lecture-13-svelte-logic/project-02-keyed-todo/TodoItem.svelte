@@ -12,19 +12,25 @@ type Props = {
   onDelete: () => void;
   onMoveUp: () => void;
   onMoveDown: () => void;
+  onSave: (text: string) => void;
   isFirst: boolean;
   isLast: boolean;
 };
 
-let { todo, onToggle, onDelete, onMoveUp, onMoveDown, isFirst, isLast }: Props = $props();
+let { todo, onToggle, onDelete, onMoveUp, onMoveDown, onSave, isFirst, isLast }: Props = $props();
 
 // Internal state that should survive when the list is reordered.
 let editing = $state(false);
-let draft = $state(todo.text);
+let draft = $state('');
+
+function startEdit() {
+  draft = todo.text;
+  editing = true;
+}
 
 function save() {
   editing = false;
-  todo.text = draft;
+  onSave(draft.trim());
 }
 </script>
 
@@ -40,8 +46,8 @@ function save() {
       <input type="text" bind:value={draft} />
       <button onclick={save}>Save</button>
     {:else}
-      <span class="text" onclick={() => (editing = true)}>{todo.text}</span>
-      <button onclick={() => (editing = true)}>Edit</button>
+      <span class="text">{todo.text}</span>
+      <button onclick={startEdit}>Edit</button>
     {/if}
   </div>
 

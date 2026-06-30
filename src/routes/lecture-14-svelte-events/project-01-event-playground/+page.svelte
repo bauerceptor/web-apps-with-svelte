@@ -12,7 +12,7 @@ function addLog(message: string) {
   nextId = nextId + 1;
 }
 
-function handleSubmit(event: Event) {
+function handleSubmit(event: SubmitEvent) {
   // preventDefault stops the browser from reloading the page on submit.
   event.preventDefault();
   addLog('Form submitted (default prevented)');
@@ -22,10 +22,25 @@ function handleOuterClick() {
   addLog('Outer box clicked');
 }
 
+function handleOuterKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    handleOuterClick();
+  }
+}
+
 function handleInnerClick(event: Event) {
   // stopPropagation keeps this click from reaching the outer box.
   event.stopPropagation();
   addLog('Inner box clicked (propagation stopped)');
+}
+
+function handleInnerKeydown(event: KeyboardEvent) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    event.stopPropagation();
+    handleInnerClick(event);
+  }
 }
 
 function handleKeydown(event: KeyboardEvent) {
@@ -49,9 +64,21 @@ function clearLogs() {
     <button type="submit">Submit form</button>
   </form>
 
-  <div class="box outer" onclick={handleOuterClick} role="button" tabindex="0">
+  <div
+    class="box outer"
+    onclick={handleOuterClick}
+    onkeydown={handleOuterKeydown}
+    role="button"
+    tabindex="0"
+  >
     <p>Outer box</p>
-    <div class="box inner" onclick={handleInnerClick} role="button" tabindex="0">
+    <div
+      class="box inner"
+      onclick={handleInnerClick}
+      onkeydown={handleInnerKeydown}
+      role="button"
+      tabindex="0"
+    >
       <p>Inner box</p>
     </div>
   </div>

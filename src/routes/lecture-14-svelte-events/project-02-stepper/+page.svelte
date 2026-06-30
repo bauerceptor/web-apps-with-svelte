@@ -3,15 +3,15 @@ import Stepper from './Stepper.svelte';
 
 let value = $state(0);
 
-function increment() {
+function onIncrement() {
   value = value + 1;
 }
 
-function decrement() {
+function onDecrement() {
   value = value - 1;
 }
 
-function reset() {
+function onReset() {
   value = 0;
 }
 </script>
@@ -24,7 +24,7 @@ function reset() {
     displays the value and calls the functions the parent passed in.
   </p>
 
-  <Stepper {value} {increment} {decrement} {reset} />
+  <Stepper {value} {onIncrement} {onDecrement} {onReset} />
 
   <p class="result">Parent sees: <strong>{value}</strong></p>
 </div>

@@ -34,6 +34,11 @@ function deleteTodo(id: number) {
   todos = todos.filter((todo) => todo.id !== id);
 }
 
+function saveTodo(id: number, text: string) {
+  if (text === '') return;
+  todos = todos.map((todo) => (todo.id === id ? { ...todo, text } : todo));
+}
+
 function moveUp(id: number) {
   const index = todos.findIndex((todo) => todo.id === id);
   if (index <= 0) return;
@@ -75,6 +80,7 @@ function moveDown(id: number) {
           isLast={todo.id === todos[todos.length - 1].id}
           onToggle={() => toggleTodo(todo.id)}
           onDelete={() => deleteTodo(todo.id)}
+          onSave={(text) => saveTodo(todo.id, text)}
           onMoveUp={() => moveUp(todo.id)}
           onMoveDown={() => moveDown(todo.id)}
         />

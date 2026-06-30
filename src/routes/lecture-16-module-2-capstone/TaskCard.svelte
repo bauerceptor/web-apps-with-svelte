@@ -17,7 +17,7 @@ let { task, onToggle, onDelete, onSave }: Props = $props();
 
 // Editing state lives inside the card and survives reordering thanks to keyed each.
 let editing = $state(false);
-let draft = $state(task.title);
+let draft = $state('');
 
 function startEdit() {
   editing = true;

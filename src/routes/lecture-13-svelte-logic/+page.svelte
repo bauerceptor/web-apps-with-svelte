@@ -9,17 +9,17 @@ const projects = [
   <h1>Logic Blocks</h1>
 
   <p>
-    Logic blocks decide what Svelte renders. `{#if}` shows or hides content,
-    `{#each}` loops over data, and `{#await}` handles promises. A stable key on
-    `{#each}` makes sure each list item keeps its own state when the order
+    Logic blocks decide what Svelte renders. {'{#if}'} shows or hides content,
+    {'{#each}'} loops over data, and {'{#await}'} handles promises. A stable key on
+    {'{#each}'} makes sure each list item keeps its own state when the order
     changes.
   </p>
 
   <ul class="concept-list">
-    <li><code>{#if}</code> renders content conditionally.</li>
-    <li><code>{#each}</code> renders a block for every item in a list.</li>
+    <li><code>{'{#if}'}</code> renders content conditionally.</li>
+    <li><code>{'{#each}'}</code> renders a block for every item in a list.</li>
     <li>A stable key tells Svelte which DOM element belongs to which item.</li>
-    <li><code>{#await}</code> handles loading, success, and error states.</li>
+    <li><code>{'{#await}'}</code> handles loading, success, and error states.</li>
   </ul>
 
   <h2>Projects</h2>

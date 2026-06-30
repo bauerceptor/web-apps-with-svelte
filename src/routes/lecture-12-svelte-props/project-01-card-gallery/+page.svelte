@@ -15,7 +15,9 @@ let cards = $state<CardData[]>([
 ]);
 
 function toggleHighlight(index: number) {
-  cards = cards.map((card, i) => (i === index ? { ...card, highlighted: !card.highlighted } : card));
+  cards = cards.map((card, i) =>
+    i === index ? { ...card, highlighted: !card.highlighted } : card,
+  );
 }
 </script>
 
@@ -24,16 +26,16 @@ function toggleHighlight(index: number) {
 
   <div class="grid">
     {#each cards as card, index}
-      <div class="card-wrapper" onclick={() => toggleHighlight(index)} role="button" tabindex="0">
+      <button type="button" class="card-button" onclick={() => toggleHighlight(index)}>
         <Card {...card} />
-      </div>
+      </button>
     {/each}
   </div>
 </div>
 
 <style>
   /* :where keeps the selector specificity low while grouping several elements. */
-  :where(.gallery) :is(h2, h3) {
+  :where(.gallery) :is(h2, .card-button) {
     font-family: var(--font-heading);
   }
 
@@ -43,12 +45,16 @@ function toggleHighlight(index: number) {
     gap: var(--space-md);
   }
 
-  .card-wrapper {
-    cursor: pointer;
+  .card-button {
+    padding: 0;
+    background: none;
+    border: none;
     text-align: start;
+    color: inherit;
+    cursor: pointer;
   }
 
-  .card-wrapper:hover :global(.card) {
+  .card-button:hover :global(.card) {
     border-color: var(--color-primary);
   }
 </style>
