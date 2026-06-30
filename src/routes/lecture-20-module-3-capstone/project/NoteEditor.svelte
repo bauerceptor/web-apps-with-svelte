@@ -109,6 +109,6 @@ function updateBody(event: Event) {
   }
 
   .preview :global(ul) {
-    padding-inline-start: var(--space-lg);
+    padding-left: var(--space-lg);
   }
 </style>
