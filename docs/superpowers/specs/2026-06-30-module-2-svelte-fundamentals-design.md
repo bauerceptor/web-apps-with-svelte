@@ -20,7 +20,7 @@ Teach the core Svelte 5 concepts that appear in the official Svelte tutorial, pl
 | **13 — Logic Blocks** | `{#if}`, `{#each}` keyed, `{#await}` | Conditional rendering, keyed loops for stateful items, async data | Async quote fetcher, Keyed todo list with reorder |
 | **14 — Events** | DOM events, modifiers, component events | `onclick`, `oninput`, `|preventDefault`, `|stopPropagation`, forwarding custom events | Event modifier playground, Custom stepper component |
 | **15 — Bindings** | `bind:value`, `bind:checked`, `bind:this`, `bind:group` | Two-way binding for inputs, element refs, grouped inputs | Settings form, Survey poll |
-| **16 — Module 2 Capstone** | All Module 2 concepts combined | Build a dashboard that uses runes, props, logic blocks, events, and bindings together | Interactive task dashboard |
+| **16 — Module 2 Capstone** | All Module 2 concepts combined | Build a dashboard that uses runes, props, logic blocks, events, and bindings together | Interactive task dashboard (single project at lecture root, like Module 1 capstone) |
 
 ---
 
