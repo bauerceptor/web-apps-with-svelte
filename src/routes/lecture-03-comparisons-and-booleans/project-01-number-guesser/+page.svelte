@@ -1,24 +1,24 @@
 <script lang="ts">
-  // Pick a secret number between 1 and 100.
-  let secret = $state(Math.floor(Math.random() * 100) + 1);
-  let guess = $state(50);
-  let message = $state('Make a guess!');
+// Pick a secret number between 1 and 100.
+let secret = $state(Math.floor(Math.random() * 100) + 1);
+let guess = $state(50);
+let message = $state('Make a guess!');
 
-  function check() {
-    if (guess === secret) {
-      message = 'Correct!';
-    } else if (guess < secret) {
-      message = 'Too low.';
-    } else {
-      message = 'Too high.';
-    }
+function check() {
+  if (guess === secret) {
+    message = 'Correct!';
+  } else if (guess < secret) {
+    message = 'Too low.';
+  } else {
+    message = 'Too high.';
   }
+}
 
-  function reset() {
-    secret = Math.floor(Math.random() * 100) + 1;
-    guess = 50;
-    message = 'Make a guess!';
-  }
+function reset() {
+  secret = Math.floor(Math.random() * 100) + 1;
+  guess = 50;
+  message = 'Make a guess!';
+}
 </script>
 
 <div class="card stack">

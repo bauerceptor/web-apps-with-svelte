@@ -1,17 +1,17 @@
 <script lang="ts">
-  let newTask = $state('');
-  let tasks = $state<string[]>(['Learn Svelte', 'Build a project']);
+let newTask = $state('');
+let tasks = $state<string[]>(['Learn Svelte', 'Build a project']);
 
-  function add() {
-    if (newTask.trim() !== '') {
-      tasks = [...tasks, newTask.trim()];
-      newTask = '';
-    }
+function add() {
+  if (newTask.trim() !== '') {
+    tasks = [...tasks, newTask.trim()];
+    newTask = '';
   }
+}
 
-  function remove(index: number) {
-    tasks = tasks.filter((_, i) => i !== index);
-  }
+function remove(index: number) {
+  tasks = tasks.filter((_, i) => i !== index);
+}
 </script>
 
 <div class="card stack">

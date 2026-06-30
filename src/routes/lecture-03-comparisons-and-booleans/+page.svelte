@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-number-guesser', title: 'Number Guesser' },
-    { slug: 'project-02-login-gate', title: 'Login Gate' }
-  ];
+const projects = [
+  { slug: 'project-01-number-guesser', title: 'Number Guesser' },
+  { slug: 'project-02-login-gate', title: 'Login Gate' },
+];
 </script>
 
 <h1>Lecture 03 — Comparisons & Booleans</h1>

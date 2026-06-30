@@ -1,9 +1,9 @@
 <script lang="ts">
-  let total = $state(75);
+let total = $state(75);
 
-  // Discount percentage based on cart total.
-  let discount = $derived(total >= 100 ? 20 : total >= 50 ? 10 : 0);
-  let final = $derived(total - (total * discount) / 100);
+// Discount percentage based on cart total.
+let discount = $derived(total >= 100 ? 20 : total >= 50 ? 10 : 0);
+let final = $derived(total - (total * discount) / 100);
 </script>
 
 <div class="card stack">

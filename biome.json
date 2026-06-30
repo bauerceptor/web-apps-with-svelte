@@ -15,6 +15,9 @@
       "recommended": true,
       "suspicious": {
         "noConsoleLog": "off"
+      },
+      "style": {
+        "useConst": "off"
       }
     }
   },

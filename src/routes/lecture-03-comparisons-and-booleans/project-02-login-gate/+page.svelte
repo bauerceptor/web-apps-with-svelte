@@ -1,9 +1,9 @@
 <script lang="ts">
-  let username = $state('');
-  let password = $state('');
+let username = $state('');
+let password = $state('');
 
-  // Both conditions must be true for access to be granted.
-  let isValid = $derived(username === 'student' && password === 'svelte');
+// Both conditions must be true for access to be granted.
+let isValid = $derived(username === 'student' && password === 'svelte');
 </script>
 
 <div class="card stack">

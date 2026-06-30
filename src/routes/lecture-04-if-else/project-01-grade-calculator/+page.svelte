@@ -1,13 +1,13 @@
 <script lang="ts">
-  let score = $state(85);
+let score = $state(85);
 
-  function grade(value: number): string {
-    if (value >= 90) return 'A';
-    if (value >= 80) return 'B';
-    if (value >= 70) return 'C';
-    if (value >= 60) return 'D';
-    return 'F';
-  }
+function grade(value: number): string {
+  if (value >= 90) return 'A';
+  if (value >= 80) return 'B';
+  if (value >= 70) return 'C';
+  if (value >= 60) return 'D';
+  return 'F';
+}
 </script>
 
 <div class="card stack">

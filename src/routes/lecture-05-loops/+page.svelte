@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-multiplication-table', title: 'Multiplication Table' },
-    { slug: 'project-02-todo-list', title: 'Todo List' }
-  ];
+const projects = [
+  { slug: 'project-01-multiplication-table', title: 'Multiplication Table' },
+  { slug: 'project-02-todo-list', title: 'Todo List' },
+];
 </script>
 
 <h1>Lecture 05 — Loops</h1>

@@ -1,14 +1,14 @@
 <script lang="ts">
-  let km = $state(5);
-  let kg = $state(10);
+let km = $state(5);
+let kg = $state(10);
 
-  function kmToMiles(value: number): number {
-    return value * 0.621371;
-  }
+function kmToMiles(value: number): number {
+  return value * 0.621371;
+}
 
-  function kgToLbs(value: number): number {
-    return value * 2.20462;
-  }
+function kgToLbs(value: number): number {
+  return value * 2.20462;
+}
 </script>
 
 <div class="card stack">

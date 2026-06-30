@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-unit-converter', title: 'Unit Converter' },
-    { slug: 'project-02-random-quote', title: 'Random Quote' }
-  ];
+const projects = [
+  { slug: 'project-01-unit-converter', title: 'Unit Converter' },
+  { slug: 'project-02-random-quote', title: 'Random Quote' },
+];
 </script>
 
 <h1>Lecture 06 — Functions</h1>

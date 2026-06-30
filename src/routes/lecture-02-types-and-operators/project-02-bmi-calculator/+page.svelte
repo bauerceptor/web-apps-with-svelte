@@ -1,16 +1,16 @@
 <script lang="ts">
-  let heightCm = $state(170);
-  let weightKg = $state(70);
+let heightCm = $state(170);
+let weightKg = $state(70);
 
-  // Convert height to meters before using it in the formula.
-  let bmi = $derived(weightKg / Math.pow(heightCm / 100, 2));
+// Convert height to meters before using it in the formula.
+let bmi = $derived(weightKg / Math.pow(heightCm / 100, 2));
 
-  function category(value: number): string {
-    if (value < 18.5) return 'Underweight';
-    if (value < 25) return 'Healthy weight';
-    if (value < 30) return 'Overweight';
-    return 'Obese';
-  }
+function category(value: number): string {
+  if (value < 18.5) return 'Underweight';
+  if (value < 25) return 'Healthy weight';
+  if (value < 30) return 'Overweight';
+  return 'Obese';
+}
 </script>
 
 <div class="card stack">

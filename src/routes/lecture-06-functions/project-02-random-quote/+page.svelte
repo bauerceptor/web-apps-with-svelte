@@ -1,19 +1,19 @@
 <script lang="ts">
-  const quotes = [
-    { text: 'Code is like humor. When you have to explain it, it’s bad.', author: 'Cory House' },
-    { text: 'Simplicity is the soul of efficiency.', author: 'Austin Freeman' },
-    { text: 'First, solve the problem. Then, write the code.', author: 'John Johnson' }
-  ];
+const quotes = [
+  { text: 'Code is like humor. When you have to explain it, it’s bad.', author: 'Cory House' },
+  { text: 'Simplicity is the soul of efficiency.', author: 'Austin Freeman' },
+  { text: 'First, solve the problem. Then, write the code.', author: 'John Johnson' },
+];
 
-  let index = $state(0);
+let index = $state(0);
 
-  function pickRandom() {
-    let next = Math.floor(Math.random() * quotes.length);
-    while (next === index && quotes.length > 1) {
-      next = Math.floor(Math.random() * quotes.length);
-    }
-    index = next;
+function pickRandom() {
+  let next = Math.floor(Math.random() * quotes.length);
+  while (next === index && quotes.length > 1) {
+    next = Math.floor(Math.random() * quotes.length);
   }
+  index = next;
+}
 </script>
 
 <div class="card stack">

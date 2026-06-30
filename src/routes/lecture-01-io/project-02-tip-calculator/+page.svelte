@@ -1,11 +1,11 @@
 <script lang="ts">
-  // Variables for the bill amount and tip percentage.
-  let bill = $state(0);
-  let tipPercent = $state(15);
+// Variables for the bill amount and tip percentage.
+let bill = $state(0);
+let tipPercent = $state(15);
 
-  // Calculate total whenever the inputs change.
-  let tipAmount = $derived((bill * tipPercent) / 100);
-  let total = $derived(bill + tipAmount);
+// Calculate total whenever the inputs change.
+let tipAmount = $derived((bill * tipPercent) / 100);
+let total = $derived(bill + tipAmount);
 </script>
 
 <div class="card stack">

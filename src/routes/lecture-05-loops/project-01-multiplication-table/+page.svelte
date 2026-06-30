@@ -1,8 +1,8 @@
 <script lang="ts">
-  let number = $state(5);
+let number = $state(5);
 
-  // Create an array [1, 2, 3, ..., 10] to drive the loop.
-  let multipliers = $derived([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+// The range 1-10 keeps the table short and readable.
+const multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 </script>
 
 <div class="card stack">

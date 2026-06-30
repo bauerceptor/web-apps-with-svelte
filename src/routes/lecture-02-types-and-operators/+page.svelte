@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-temperature-converter', title: 'Temperature Converter' },
-    { slug: 'project-02-bmi-calculator', title: 'BMI Calculator' }
-  ];
+const projects = [
+  { slug: 'project-01-temperature-converter', title: 'Temperature Converter' },
+  { slug: 'project-02-bmi-calculator', title: 'BMI Calculator' },
+];
 </script>
 
 <h1>Lecture 02 — Numbers, Strings & Operators</h1>

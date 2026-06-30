@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-grade-calculator', title: 'Grade Calculator' },
-    { slug: 'project-02-discount-eligibility', title: 'Discount Eligibility' }
-  ];
+const projects = [
+  { slug: 'project-01-grade-calculator', title: 'Grade Calculator' },
+  { slug: 'project-02-discount-eligibility', title: 'Discount Eligibility' },
+];
 </script>
 
 <h1>Lecture 04 — If / Else</h1>

@@ -1,12 +1,12 @@
 <script lang="ts">
-  // Start with a comfortable room temperature.
-  let celsius = $state(20);
+// Start with a comfortable room temperature.
+let celsius = $state(20);
 
-  // Derive Fahrenheit from the current Celsius value.
-  let fahrenheit = $derived((celsius * 9) / 5 + 32);
+// Derive Fahrenheit from the current Celsius value.
+let fahrenheit = $derived((celsius * 9) / 5 + 32);
 
-  // Template strings let us embed values inside readable text.
-  let summary = $derived(`${celsius}°C is ${fahrenheit.toFixed(1)}°F`);
+// Template strings let us embed values inside readable text.
+let summary = $derived(`${celsius}°C is ${fahrenheit.toFixed(1)}°F`);
 </script>
 
 <div class="card stack">

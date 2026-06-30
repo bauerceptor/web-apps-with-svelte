@@ -1,6 +1,6 @@
 <script lang="ts">
-  // A variable that holds the user's name. $state makes it reactive.
-  let name = $state('');
+// A variable that holds the user's name. $state makes it reactive.
+let name = $state('');
 </script>
 
 <div class="card stack">

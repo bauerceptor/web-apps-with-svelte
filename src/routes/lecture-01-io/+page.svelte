@@ -1,8 +1,8 @@
 <script lang="ts">
-  const projects = [
-    { slug: 'project-01-greeter', title: 'Greeter' },
-    { slug: 'project-02-tip-calculator', title: 'Tip Calculator' }
-  ];
+const projects = [
+  { slug: 'project-01-greeter', title: 'Greeter' },
+  { slug: 'project-02-tip-calculator', title: 'Tip Calculator' },
+];
 </script>
 
 <h1>Lecture 01 — Input / Output & Variables</h1>
