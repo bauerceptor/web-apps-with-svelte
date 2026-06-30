@@ -1,0 +1,22 @@
+{
+  "imports": {
+    "@biomejs/biome": "npm:@biomejs/biome@^1.9.4",
+    "@sveltejs/adapter-auto": "npm:@sveltejs/adapter-auto@^3.0.0",
+    "@sveltejs/kit": "npm:@sveltejs/kit@^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^4.0.0",
+    "browserslist": "npm:browserslist@^4.0.0",
+    "lightningcss": "npm:lightningcss@^1.0.0",
+    "svelte": "npm:svelte@^5.0.0",
+    "svelte-check": "npm:svelte-check@^4.0.0",
+    "typescript": "npm:typescript@^5.0.0",
+    "vite": "npm:vite@^5.0.0"
+  },
+  "tasks": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "format": "biome format --write .",
+    "lint": "biome lint ."
+  }
+}
