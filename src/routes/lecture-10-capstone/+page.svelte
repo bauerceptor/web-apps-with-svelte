@@ -58,6 +58,14 @@ function restart() {
   {#if finished}
     <div class="finished">
       <p class="score">You scored {score} out of {cards.length}</p>
+
+      <!-- Loop through all cards to show a review list. -->
+      <ul class="review">
+        {#each cards as card}
+          <li><strong>{card.question}</strong> — {card.answer}</li>
+        {/each}
+      </ul>
+
       <button onclick={restart}>Restart</button>
     </div>
   {:else}
@@ -134,6 +142,23 @@ function restart() {
       font-size: 1.5rem;
       font-family: var(--font-accent);
       margin-block-end: var(--space-md);
+    }
+
+    .review {
+      list-style: none;
+      padding: 0;
+      margin-block: var(--space-md);
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .review li {
+      padding: var(--space-sm) var(--space-md);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
     }
   }
 
