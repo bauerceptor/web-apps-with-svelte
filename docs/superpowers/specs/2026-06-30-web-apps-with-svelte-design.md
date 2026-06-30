@@ -22,7 +22,6 @@ web-apps-with-svelte/
 ├── SYLLABUS.md
 ├── deno.json                 # Deno tasks and imports
 ├── vite.config.ts            # Vite configuration (required by SvelteKit)
-├── farm.config.ts            # Optional Farm configuration shown as a Vite-compatible alternative
 ├── biome.json                # Biome formatter/linter config
 ├── src/
 │   ├── app.html
@@ -66,13 +65,12 @@ web-apps-with-svelte/
 
 ## 3. Toolchain
 
-The toolchain favors Rust-based tools where possible. Vite is included because SvelteKit is built on it; the README explains Vite honestly and also mentions Farm as a Rust-based Vite-compatible alternative.
+The toolchain uses modern tools that students can run with minimal setup. Vite is included because SvelteKit is built on it; the README explains this honestly.
 
 | Tool | Role | Why it is in the course |
 |------|------|--------------------------|
 | **Deno** | Runtime and package manager | Replaces Node + npm. Deno runs TypeScript natively, handles dependencies, and runs the task scripts defined in `deno.json`. |
 | **Vite** | Dev server and bundler | Required by SvelteKit. Starts the dev server and bundles the app for production. |
-| **Farm** | Vite-compatible alternative | A Rust-based bundler comparable to Vite. Kept as an optional config and learning note, not the primary build tool. |
 | **SvelteKit** | App framework | Provides file-based routing, layouts, and the project structure that mirrors real-world Svelte apps. |
 | **Biome** | Formatter and linter | One tool that formats and lints TS/JS/Svelte. Used with `deno task check` and `deno task format`. |
 | **Lightning CSS** | CSS transformer | Handles modern CSS features such as nesting, custom properties, and minification as part of the Vite build pipeline. |
@@ -237,7 +235,7 @@ The final module builds a **Smart Recipe Generator**.
 - **Module 1 content:** Lectures 01–09 + capstone, each with 2–3 projects.
 - **File organization:** One route per lecture, sub-routes per project/example.
 - **TypeScript style:** Light type hints only, like JS with annotations.
-- **Toolchain:** Deno + Vite + SvelteKit + Biome + Lightning CSS, with Farm included as an optional Vite-compatible alternative.
+- **Toolchain:** Deno + Vite + SvelteKit + Biome + Lightning CSS.
 - **Svelte version:** Svelte 5 with runes.
 - **AI project:** Smart recipe generator using the Groq API.
 - **Explanations:** Brief README per lecture + heavily commented code.
