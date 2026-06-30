@@ -43,8 +43,6 @@ function refresh() {
         <p class="content">{quote.content}</p>
         <footer class="author">— {quote.author}</footer>
       </blockquote>
-    {:catch error}
-      <p class="status error">Something went wrong: {error.message}</p>
     {/await}
   </div>
 </div>
@@ -57,10 +55,6 @@ function refresh() {
   .status {
     color: var(--color-text-muted);
     font-style: italic;
-  }
-
-  .error {
-    color: var(--color-error);
   }
 
   .quote {

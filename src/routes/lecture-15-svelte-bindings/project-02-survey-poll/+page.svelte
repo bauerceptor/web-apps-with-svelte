@@ -16,7 +16,6 @@ function votesForFeature(feature: string): number {
 }
 
 function percent(value: number): string {
-  if (totalVotes === 0) return '0%';
   return `${Math.round((value / totalVotes) * 100)}%`;
 }
 </script>
