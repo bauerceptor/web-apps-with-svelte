@@ -62,13 +62,14 @@
     "typescript": "npm:typescript@^5.0.0",
     "vite": "npm:vite@^5.0.0"
   },
+  "nodeModulesDir": "auto",
   "tasks": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "format": "biome format --write .",
-    "lint": "biome lint ."
+    "dev": "deno run -A npm:vite dev",
+    "build": "deno run -A npm:vite build",
+    "preview": "deno run -A npm:vite preview",
+    "check": "deno run -A npm:@sveltejs/kit/svelte-kit sync && deno run -A npm:svelte-check --tsconfig ./tsconfig.json",
+    "format": "deno run -A npm:@biomejs/biome format --write .",
+    "lint": "deno run -A npm:@biomejs/biome lint ."
   }
 }
 ```
@@ -133,12 +134,15 @@ export default defineConfig({
 ```json
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "ignore": [".svelte-kit", ".vite", "node_modules"]
+  },
   "organizeImports": {
     "enabled": true
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "tab",
+    "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 100
   },
@@ -148,6 +152,9 @@ export default defineConfig({
       "recommended": true,
       "suspicious": {
         "noConsoleLog": "off"
+      },
+      "style": {
+        "useConst": "off"
       }
     }
   },
@@ -199,10 +206,22 @@ cp /home/red/Downloads/svelte-svgrepo-com.svg static/favicon.svg
 
 Expected result: `static/favicon.svg` exists and is the SVG from the Downloads folder.
 
-- [ ] **Step 9: Commit**
+- [ ] **Step 9: Create `.gitignore`**
 
 ```bash
-git add deno.json svelte.config.js vite.config.ts tsconfig.json biome.json src/app.html src/app.d.ts static/favicon.svg
+cat > .gitignore <<'EOF'
+.worktrees/
+node_modules/
+.svelte-kit/
+.vite/
+deno.lock
+EOF
+```
+
+- [ ] **Step 10: Commit**
+
+```bash
+git add deno.json svelte.config.js vite.config.ts tsconfig.json biome.json src/app.html src/app.d.ts static/favicon.svg .gitignore
 git commit -m "chore: scaffold SvelteKit project with Deno, Vite, Biome, Lightning CSS"
 ```
 
@@ -808,7 +827,7 @@ git commit -m "feat: add lecture 01 - input/output and variables"
   let weightKg = $state(70);
 
   // Convert height to meters before using it in the formula.
-  let bmi = $derived(weightKg / Math.pow(heightCm / 100, 2));
+  let bmi = $derived(weightKg / (heightCm / 100) ** 2);
 
   function category(value: number): string {
     if (value < 18.5) return 'Underweight';
@@ -1264,7 +1283,7 @@ git commit -m "feat: add lecture 04 - if/else"
 </script>
 
 <h1>Lecture 05 — Loops</h1>
-<p>Rendering lists with `{#each}`.</p>
+<p>Rendering lists with {'{#each}'}.</p>
 
 <ul class="project-list">
   {#each projects as project}
@@ -1304,8 +1323,8 @@ git commit -m "feat: add lecture 04 - if/else"
 <script lang="ts">
   let number = $state(5);
 
-  // Create an array [1, 2, 3, ..., 10] to drive the loop.
-  let multipliers = $derived([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  // The range 1-10 keeps the table short and readable.
+  const multipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 </script>
 
 <div class="card stack">
@@ -2369,6 +2388,14 @@ git commit -m "feat: add lecture 09 - objects"
   {#if finished}
     <div class="finished">
       <p class="score">You scored {score} out of {cards.length}</p>
+
+      <!-- Show every question and answer so students can review missed cards. -->
+      <ul class="review">
+        {#each cards as card}
+          <li><strong>{card.question}</strong> — {card.answer}</li>
+        {/each}
+      </ul>
+
       <button onclick={restart}>Restart</button>
     </div>
   {:else}
@@ -2445,6 +2472,23 @@ git commit -m "feat: add lecture 09 - objects"
       font-size: 1.5rem;
       font-family: var(--font-accent);
       margin-block-end: var(--space-md);
+    }
+
+    .review {
+      list-style: none;
+      padding: 0;
+      margin-block: var(--space-md);
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .review li {
+      padding: var(--space-sm) var(--space-md);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
     }
   }
 
