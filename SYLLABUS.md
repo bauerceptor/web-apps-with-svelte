@@ -27,7 +27,7 @@
 17. Lifecycle: `$effect`, cleanup functions
 18. Stores: writable, readable, derived
 19. Transitions, animations & actions
-20. Composition, context & special elements
+20. Capstone: Markdown Notes Workspace
 
 ## Module 4: AI-driven apps
 
